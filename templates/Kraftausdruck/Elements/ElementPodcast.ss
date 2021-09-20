@@ -3,11 +3,11 @@
 <% if $Items %>
 	<div class="jobs teasers">
 		<% loop $Items %>
-			<a href='{$AbsoluteLink}' class="job teaser">
-				<% if $HeaderImage %><figure><img height="$HeaderImage.FocusFillMax(340,160).Height()" width="$HeaderImage.FocusFillMax(340,160).Width()" src="$HeaderImage.FocusFillMax(340,160).URL" srcset="$HeaderImage.FocusFillMax(340,160).URL 1x, $HeaderImage.FocusFillMax(680,320).URL 2x" alt="$Title" /></figure><% end_if %>
+			<a href='{$AbsoluteLink}' class="podcast">
+				<% if $Image %><figure><img height="$Image.FocusFillMax(340,178).Height()" width="$Image.FocusFillMax(340,178).Width()" src="$Image.FocusFillMax(340,178).URL" srcset="$Image.FocusFillMax(340,178).URL 1x, $HeaderImage.FocusFillMax(680,357).URL 2x" alt="$Title" /></figure><% end_if %>
 				<div class="txt">
-					<% if $Title %><h4>$Title</h4><% end_if %>
-					<%-- <p><% loop $JobLocations %>$AddressLocality<% if not $Last %>, <% end_if %><% end_loop %></p> --%>
+					<% if $Title %><h2>$Title</h2><% end_if %>
+					<% if $Subtitle %><h3>$Subtitle</h3><% end_if %>
 				</div>
 				<p class="forth"><%t Kraftausdruck\Models\JobPosting.MORE "Stelleninserat" %></p>
 			</a>

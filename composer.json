@@ -20,13 +20,12 @@
     }],
     "require": {
         "dnadesign/silverstripe-elemental": "^4",
-        "james-heinrich/getid3": "v2.0.0-beta3",
-        "wilr/silverstripe-googlesitemaps": "^2"
+        "james-heinrich/getid3": "v2.0.0-beta3"
     },
     "extra": {
         "expose": [
-            "podcast/icons",
-            "podcast/css"
+            "icons",
+            "css"
         ]
     },
     "autoload": {

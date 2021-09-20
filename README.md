@@ -23,4 +23,5 @@ Run `dev/build`
 - decoupling form lerni/ootsra
     - Urlify & meta translations
     - PerLineText is missing
+- get ID3 Tags in onBefore Write if fields are empty & save all with button instead of getting
 - allow external URLs/Videos

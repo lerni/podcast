@@ -7,14 +7,23 @@ span.menu__icon.font-icon-podcast {
 	width: 16px;
 	height: 26px;
 }
-
+.popover-option-set__button-container .font-icon-block-podcast::before,
 .element-editor__element .element-editor-header .font-icon-block-podcast::before {
 	content: " ";
 	display: inline-block;
+	background-image: url('../icons/podcast-boxed.svg');
+	background-repeat: no-repeat;
+	background-position: center;
+	background-size: 25px auto;
+}
+
+.element-editor__element .element-editor-header .font-icon-block-podcast::before {
 	width: 28px;
 	height: 32px;
-	background-image: url('../icons/podcast-boxed.svg');
-	background-position: center;
-	background-repeat: no-repeat;
-	background-size: 26px auto;
+}
+
+.popover-option-set__button-container .font-icon-block-podcast::before {
+	width: 27px;
+	height: 31px;
+	margin-top: -4px;
 }

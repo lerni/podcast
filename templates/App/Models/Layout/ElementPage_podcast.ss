@@ -1,9 +1,9 @@
 <% include App/Includes/Header %>
 <main class="typography">
-	<% if $Episode.HeaderImage %>
+	<% if $Episode.Image %>
 		<article class="element elementhero spacing-bottom-2">
 			<figure>
-				<% with $HeaderImage %><img sizes="100vw" alt="$Title"
+				<% with $Image %><img sizes="100vw" alt="$Title"
 					height="$FocusFillMax(1440,360).Height()"
 					width="$FocusFillMax(1440,360).Width()"
 					style="object-position: {$FocusFillMax(1440,360).PercentageX}% {$FocusFillMax(1440,360).PercentageY}%;"
@@ -27,7 +27,15 @@
 	<% with $Item %>
 		<article <% if $ElementAnchor %>id="$ElementAnchor"<% end_if %> class="element elementpodcast show spacing-bottom-2">
 			<div class="inner">
-				$Description
+				<div class="txt">
+					<% if $Title %><h2>$Title</h2><% end_if %>
+					<% if $Subtitle %><h3>$Subtitle</h3><% end_if %>
+					<% if $Description %>$Description<% end_if %>
+					<% if $Media %><audio controls>
+						<source src="$Media.URL" type="$Media.getMimeType">
+						Your browser does not support the audio-file $Media.URL
+					</audio><% end_if %>
+				</div>
 				<a href="$Parent.Link" class="parent-link back">$Parent.Parent.OwnerPage.MenuTitle</a>
 				$PodcastEpisodeSchema.RAW
 			</div>
