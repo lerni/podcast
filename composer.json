@@ -19,8 +19,7 @@
         "role": "Developer"
     }],
     "require": {
-        "dnadesign/silverstripe-elemental": "^4",
-        "james-heinrich/getid3": "2.0.x-dev"
+        "dnadesign/silverstripe-elemental": "^4"
     },
     "extra": {
         "expose": [

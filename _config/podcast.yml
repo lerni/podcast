@@ -14,9 +14,9 @@ Kraftausdruck\Models\PodcastEpisode:
   additional_locales:
     - de_CH: 'Deutsch (Schweiz)'
 
-SilverStripe\Forms\GridField\GridFieldDetailForm_ItemRequest:
-  extensions:
-    - Kraftausdruck\Extensions\GetID3Tags
+# SilverStripe\Forms\GridField\GridFieldDetailForm_ItemRequest:
+#   extensions:
+#     - Kraftausdruck\Extensions\GetID3Tags
 
 App\Controller\ElementPageController:
   extensions:
