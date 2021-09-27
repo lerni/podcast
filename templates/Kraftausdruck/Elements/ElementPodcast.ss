@@ -9,7 +9,7 @@
 					<% if $Title %><h2>$Title</h2><% end_if %>
 					<% if $Subtitle %><h3>$Subtitle</h3><% end_if %>
 				</div>
-				<p class="forth"><%t Kraftausdruck\Models\JobPosting.MORE "Stelleninserat" %></p>
+				<p class="forth"><%t Kraftausdruck\Elements\ElementPodcast.MORE "Podcast" %></p>
 			</a>
 		<% end_loop %>
 	</div>

@@ -8,7 +8,6 @@ use SilverStripe\Forms\LiteralField;
 use Kraftausdruck\Models\PodcastSeries;
 use Kraftausdruck\Models\PodcastEpisode;
 use Symbiote\GridFieldExtensions\GridFieldOrderableRows;
-// use Kraftausdruck\Elements\ElementPodcast;
 
 
 class PodcastAdmin extends ModelAdmin
@@ -29,22 +28,22 @@ class PodcastAdmin extends ModelAdmin
         $form = parent::getEditForm($id, $fields);
         if ($this->modelClass == PodcastEpisode::class)
         {
-            // if(Director::isLive())
-            // {
-            //     $message = _t(__CLASS__ . '.ElementPodcastNeeded',
-            //         'none',
-            //         ['BaseURL' => Director::absoluteBaseURL()]
-            //     );
-            //     $form->Fields()->unshift(
-            //         LiteralField::create(
-            //             'PodcastNeeded',
-            //             sprintf(
-            //                 '<p class="alert alert-info">%s</p>',
-            //                 $message
-            //             )
-            //         )
-            //     );
-            // }
+            if(Director::isLive())
+            {
+                $message = _t(__CLASS__ . '.ElementPodcastNeeded',
+                    'Podcasts are displayed per "Podcast Element".<br/><a target="_blank" href="https://www.google.com/ping?sitemap={BaseURL}sitemap.xml/sitemap/Kraftausdruck-Models-JobPosting/1">Ping Google</a>',
+                    ['BaseURL' => Director::absoluteBaseURL()]
+                );
+                $form->Fields()->unshift(
+                    LiteralField::create(
+                        'PodcastNeeded',
+                        sprintf(
+                            '<p class="alert alert-info">%s</p>',
+                            $message
+                        )
+                    )
+                );
+            }
 
             $grid_field = $form
                 ->Fields()

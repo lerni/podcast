@@ -1,4 +1,6 @@
 de:
   Kraftausdruck\Models\PodcastEpisode:
+  Kraftausdruck\Admin\JobsAdmin:
+    ElementPodcastNeeded: 'Podcasts werden per "Podcast Element" angezeigt.<br/><a target="_blank" href="https://www.google.com/ping?sitemap={BaseURL}sitemap.xml/sitemap/Kraftausdruck-Models-JobPosting/1">Ping Google</a>'
   Kraftausdruck\Elements\ElementPodcast:
-    DEFAULTNoPodcasts: 'Besten Dank für Ihr Interesse. Zur Zeit sind keine Podcasts verfügbar.'
+    DEFAULTNoPodcasts: 'Besten Dank für Ihr Interesse. Aktuell sind keine Podcasts verfügbar.'

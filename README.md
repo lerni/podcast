@@ -5,7 +5,7 @@ This module is inspired from https://github.com/lukereative/silverstripe-podcast
 
 ## Requirements
 - dnadesign/silverstripe-elemental ^4
-- james-heinrich/getid3: ^1 or may ^2?
+- james-heinrich/getid3: ^2 - v2.0.0-beta3 // 2.0.x-dev at the time of writing
 
 ### Suggested
 

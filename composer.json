@@ -20,7 +20,7 @@
     }],
     "require": {
         "dnadesign/silverstripe-elemental": "^4",
-        "james-heinrich/getid3": "v2.0.0-beta3"
+        "james-heinrich/getid3": "2.0.x-dev"
     },
     "extra": {
         "expose": [

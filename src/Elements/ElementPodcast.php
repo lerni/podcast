@@ -110,7 +110,7 @@ class ElementPodcast extends BaseElement
     // first one should be primary unless selected differently
     public function populateDefaults()
     {
-        $this->NoPodcasts = '<p>' . _t(__CLASS__ . '.DEFAULTNoPodcasts', 'Thank you very much for your interest. There are currently no podcasts available.') . '</p>';
+        $this->NoPodcasts = '<p>' . _t(__CLASS__ . '.DEFAULTNoPodcasts', 'Thank you for your interest. Currently there are no podcasts available.') . '</p>';
         $this->Primary = 1;
         if ($podcastElements = $this->ClassName::get()->filter('Primary', 1)->count()) {
             $this->Primary = 0;
