@@ -30,7 +30,7 @@ class PodcastSeries extends DataObject
         'Locale' => 'Varchar',
         'IsDefault' => 'Boolean',
         'CopyrightHolder' => 'Varchar',
-        // todo: google & apple do not suggest the same thing - either way it doesn't validate ATM
+        // Google uses just TopCategory, Apple both $TopCategory & $Subcategory -> check getters
             // https://validator.w3.org/feed/
             // https://validator.w3.org/feed/docs/error/InvalidItunesCategory.html
             // https://support.google.com/podcast-publishers/answer/9889544?hl=en#podcast_tags&zippy=%2Cempfohlene-kategorien%2Crecommended-categories
@@ -115,12 +115,10 @@ class PodcastSeries extends DataObject
                 if(is_array($item)) {
                     $keys = array_keys($item);
                     $key = $keys[0];
-                    $ii = 0;
-                    foreach($item as $subitem) {
-                        $values[$subitem[$ii]] = $subitem[$ii];
-                        $ii++;
+                    $values = [];
+                    foreach($item[$key] as $subitem) {
+                        $values[$key.'|'.$subitem] = $key.'|'.$subitem;
                     }
-                    // $subcategoryArray[$key] = $item[$key];
                     $subcategoryArray[$key] = $values;
                 } else {
                     $subcategoryArray[$item] = $item;
@@ -170,6 +168,24 @@ class PodcastSeries extends DataObject
         }
 
         return $fields;
+    }
+
+    public function getTopCategory() {
+        if (isset($this->Category) && $this->Category != null) {
+            $explodedCat = explode('|', $this->Category);
+            if (is_array($explodedCat)) {
+                return $explodedCat[0];
+            }
+        }
+    }
+
+    public function getSubCategory() {
+        if (isset($this->Category) && $this->Category != null) {
+            $explodedCat = explode('|', $this->Category);
+            if (is_array($explodedCat) && count($explodedCat) > 1) {
+                return $explodedCat[1];
+            }
+        }
     }
 
     public function PodcastSeriesSchema()

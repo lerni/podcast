@@ -24,8 +24,13 @@
 	<% if $Title %><title>$Title.XML</title><% end_if %>
 	<link>{$Up.AbsoluteBaseURLTrimmed}{$Up.Link('')}</link>
 </image><% end_if %>
-<% if $Category %><itunes:category text="{$Category}" />
-<googleplay:category text="{$Category}" /><% end_if %>
+<% if $SubCategory %><itunes:category text="{$TopCategory.XML}" >
+		<itunes:category text="{$SubCategory.XML}" />
+	</itunes:category>
+	<% if $Category %><googleplay:category text="{$TopCategory.XML}" /><% end_if %><% else %>
+<% if $Category %><googleplay:category text="{$TopCategory.XML}" />
+	<itunes:category text="{$TopCategory.XML}" /><% end_if %>
+<% end_if %>
 <% end_with %>
 <% cached 'Episodes', $List(Kraftausdruck\Models\PodcastEpisode).max('LastEdited'), $List(Kraftausdruck\Models\PodcastEpisode).count() %><% loop $Episodes %><item>
 	<% if $Title %><title>$Title.XML</title><% end_if %>
