@@ -117,7 +117,7 @@ class PodcastSeries extends DataObject
                     $key = $keys[0];
                     $values = [];
                     foreach($item[$key] as $subitem) {
-                        $values[$key.'|'.$subitem] = $key.'|'.$subitem;
+                        $values[$key.'|'.$subitem] = $subitem;
                     }
                     $subcategoryArray[$key] = $values;
                 } else {

@@ -2,6 +2,9 @@
     "name": "lerni/podcast",
     "type": "silverstripe-vendormodule",
     "description": "Silverstripe Podcast Integration",
+    "homepage": "https://github.com/lerni/samesite-cookie-patch",
+    "keywords": ["silverstripe", "Podcast", "Feed", "RSS"],
+    "license": "BSD-3-Clause",
     "keywords": [
         "Silverstripe",
         "Podcast",
