@@ -170,6 +170,7 @@ class PodcastEpisode extends DataObject
             $AuthorField->setDescription(_t(__CLASS__ . '.AuthorDescription', 'New line each!'));
         }
 
+        $fields->removeByName(['PodcastCategories']);
         $categories = BlogCategory::get();
         $tagField = new TagField('PodcastCategories',
             'Categories',
