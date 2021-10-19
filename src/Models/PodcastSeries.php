@@ -196,9 +196,9 @@ class PodcastSeries extends DataObject
             ->url($this->AbsoluteLink())
             ->webFeed($this->AbsoluteLink(). 'rss');
 
-            if ($this->Image()->exists()) {
-                $schema->image(rtrim(Director::absoluteBaseURL(), '/') . $this->Image()->FocusFillMax('1200', '542')->Link());
-            }
+            // if ($this->Image()->exists()) {
+            //     $schema->image(rtrim(Director::absoluteBaseURL(), '/') . $this->Image()->FocusFillMax('1200', '542')->Link());
+            // }
 
         $schema->setProperty('@id', $this->AbsoluteLink());
 

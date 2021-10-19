@@ -10,8 +10,10 @@ use SilverStripe\Assets\Image;
 use SilverStripe\ORM\DataObject;
 use SilverStripe\Control\Director;
 use SilverStripe\Security\Security;
+use SilverStripe\TagField\TagField;
 use SilverStripe\Forms\DropdownField;
 use Kraftausdruck\Models\PodcastSeries;
+use SilverStripe\Blog\Model\BlogCategory;
 use SilverStripe\ORM\FieldType\DBDatetime;
 
 class PodcastEpisode extends DataObject
@@ -32,6 +34,17 @@ class PodcastEpisode extends DataObject
         // 'Image' => Image::class,
         'Media' => File::class,
         'PodcastSeries' => PodcastSeries::class
+    ];
+
+
+    private static $many_many = [
+        'PodcastCategories' => BlogCategory::class
+    ];
+
+    private static $many_many_extraFields = [
+        'PodcastCategories' => [
+            'SortOrder' => 'Int'
+        ]
     ];
 
     private static $owns = [
@@ -66,7 +79,7 @@ class PodcastEpisode extends DataObject
     ];
 
     private static $summary_fields = [
-        'Image.CMSThumbnail' => 'Thumbnail',
+        // 'Image.CMSThumbnail' => 'Thumbnail',
         'Title',
         'PodcastSeries.Title',
         'Active'
@@ -157,6 +170,18 @@ class PodcastEpisode extends DataObject
             $AuthorField->setDescription(_t(__CLASS__ . '.AuthorDescription', 'New line each!'));
         }
 
+        $categories = BlogCategory::get();
+        $tagField = new TagField('PodcastCategories',
+            'Categories',
+            $categories,
+            $this->PodcastCategories()
+        );
+        $tagField->setIsMultiple(true);
+        $tagField->setCanCreate(true);
+        $tagField->setIsMultiple(true);
+        $tagField->setShouldLazyLoad(false);
+        $fields->insertAfter('Locale', $tagField);
+
         return $fields;
     }
 
@@ -192,9 +217,9 @@ class PodcastEpisode extends DataObject
                 $schema->author($authors);
             }
 
-            if ($this->Image()->exists()) {
-                $schema->image(rtrim(Director::absoluteBaseURL(), '/') . $this->Image()->FocusFillMax('1200', '542')->Link());
-            }
+            // if ($this->Image()->exists()) {
+            //     $schema->image(rtrim(Director::absoluteBaseURL(), '/') . $this->Image()->FocusFillMax('1200', '542')->Link());
+            // }
 
             if ($this->Media()->exists()) {
                 $link = rtrim(Director::absoluteBaseURL(), '/') . $this->Media()->Link();
