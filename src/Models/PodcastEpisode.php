@@ -70,7 +70,7 @@ class PodcastEpisode extends DataObject
         if ($defautlPodcastSeries) {
             $this->Locale = $defautlPodcastSeries->Locale;
             $this->PodcastSeriesID = $defautlPodcastSeries->ID;
-            $this->ImageID = $defautlPodcastSeries->ImageID;
+            // $this->ImageID = $defautlPodcastSeries->ImageID;
         }
     }
 
@@ -151,10 +151,10 @@ class PodcastEpisode extends DataObject
             $TextEditorField->addExtraClass('stacked');
         }
 
-        if ($uploadField = $fields->dataFieldByName('Image')) {
-            $uploadField->setFolderName('episodes');
-            $uploadField->setDescription(_t(__CLASS__ . '.ImageDescription', 'Episode Image - min. 1200x630px'));
-        }
+        // if ($uploadField = $fields->dataFieldByName('Image')) {
+        //     $uploadField->setFolderName('episodes');
+        //     $uploadField->setDescription(_t(__CLASS__ . '.ImageDescription', 'Episode Image - min. 1200x630px'));
+        // }
 
         if ($MediaUploadField = $fields->dataFieldByName('Media')) {
             $MediaUploadField->allowedExtensions = array('mp3', 'ogg', 'aac', 'm4a', 'flac');
