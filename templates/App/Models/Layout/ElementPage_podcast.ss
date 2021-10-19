@@ -32,10 +32,13 @@
 					<% if $Subtitle %><h3>$Subtitle</h3><% end_if %>
 					<% if $Author %><p>Von <% loop $Author.PerLineText %>$Item.Plain.RAW<% if not $Last %>, <% end_if %><% end_loop %><% end_if %></p>
 					<% if $Description %>$Description<% end_if %>
-					<% if $Media %><audio controls>
-						<source src="$Media.URL" type="$Media.getMimeType">
-						Your browser does not support the audio-file $Media.URL
-					</audio><% end_if %>
+					<div class="media">
+						<% if $Media %><audio controls>
+							<source src="$Media.URL" type="$Media.getMimeType">
+							Your browser does not support the audio-file $Media.URL
+						</audio><% end_if %>
+						<p></span><a download href="$Media.URL" title="Download media"><span data-feather="download"></span></a></p>
+					</div>
 				</div>
 				<br>
 				<a href="$Parent.Link" class="parent-link back">Übersicht $Parent.Parent.OwnerPage.MenuTitle</a>

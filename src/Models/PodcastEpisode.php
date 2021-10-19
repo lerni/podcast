@@ -29,13 +29,13 @@ class PodcastEpisode extends DataObject
     ];
 
     private static $has_one = [
-        'Image' => Image::class,
+        // 'Image' => Image::class,
         'Media' => File::class,
         'PodcastSeries' => PodcastSeries::class
     ];
 
     private static $owns = [
-        'Image',
+        // 'Image',
         'Media'
     ];
 

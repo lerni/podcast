@@ -39,7 +39,7 @@ class PodcastSeries extends DataObject
     ];
 
     private static $has_one = [
-        'Image' => Image::class
+        // 'Image' => Image::class
     ];
 
     private static $has_many = [
@@ -47,7 +47,7 @@ class PodcastSeries extends DataObject
     ];
 
     private static $owns = [
-        'Image'
+        'Title'
     ];
 
     private static $table_name = 'PodcastSeries';
