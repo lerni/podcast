@@ -1,5 +1,5 @@
 # Silverstripe Podcast - WIP
-Silverstripe Podcast let you manage Series & Episodes per ModelAdmin and present those per ElementPodcast [Elemental Block](https://github.com/silverstripe/silverstripe-elemental). It's supposed to integrates with "Spotify Podcasts", "iTunes Podcasts" & "Google Podcasts" and offers schema integration.
+Silverstripe Podcast let you manage Series & Episodes per ModelAdmin and present those per ElementPodcast [Elemental Block](https://github.com/silverstripe/silverstripe-elemental). It's supposed to integrates with "Spotify Podcast", "iTunes Podcast" & "Google Podcast" and offers schema integration.
 
 This module is inspired from https://github.com/lukereative/silverstripe-podcast but since I didn't want it to be page based, "phansys/getid3" integration didn't work and other parts just didn't fit to what I needed, this came to existence. ATM it's coupled with my project-setup `lerni/ootstra`.
 
