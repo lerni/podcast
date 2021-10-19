@@ -66,7 +66,7 @@ class PodcastSeries extends DataObject
     }
 
     private static $summary_fields = [
-        'Image.CMSThumbnail' => 'Thumbnail',
+        // 'Image.CMSThumbnail' => 'Thumbnail',
         'Title'
     ];
 
